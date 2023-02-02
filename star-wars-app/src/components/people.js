@@ -20,7 +20,6 @@ export const People = () => {
                     .then(res => res.json())
                     .then(res => { url = res.next; return res })
                     .then(res => res.results)
-                    //.then(res.map(p => ({...p, id: +getFilmID(p.url)})))
                     tempPeople.push(...fetchedPeople)
             }
             catch (err){
@@ -34,21 +33,12 @@ export const People = () => {
     console.log(people);
     return(
         <>
-            <h2>Films</h2>
+            <h2>People</h2>
             <section id="people">
-                {people.map((person, index) => <div key={index}>{person.title}</div>)}
+                {people.map((person, index) => <div key={index}>{person.name}</div>)}
             </section>
         </>
 
     );
-
-    
-}
-const getFilmID = (url) => {
-    const input = /.*film\/(\d+).*/;
-    const matches = url.match(input);
-    console.log(matches);
-    if(!matches) throw "Not a StarWars film.";
-    return matches[1];
 }
 
