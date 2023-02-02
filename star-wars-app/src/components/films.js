@@ -1,8 +1,7 @@
 import React, { useEffect, useState } from "react"; 
 
 export const Films = () => {
-  //  const [film, setFilm] = useState({})
-    let films = [];
+    const [films, setFilms] = useState([])
     let url = 'https://swapi.dev/api/films';
   
 /* 
@@ -14,29 +13,32 @@ export const Films = () => {
             })
     }, []); */
     async function getFilms(){
+        const tempFilms = [];
         while(url){
             try{
                 const fetchedFilms = await fetch(url)
                     .then(res => res.json())
                     .then(res => { url = res.next; return res })
                     .then(res => res.results)
-                    films.push(...fetchedFilms)
+                    tempFilms.push(...fetchedFilms)
             }
             catch (err){
                 console.error("error reading films" + err.message);
             }
         }
-    
+        setFilms(tempFilms);
     }
-    console.log(films);
+
     getFilms();
+    console.log(films);
     return(
-        <div className="peopleDiv">
-            <h1>Films</h1>
-            {films.map((film, index) => (
-                <p key={index}>Title: {film.title}</p>
-            ))}
-        </div>
+        <>
+            <h2>Films</h2>
+            <section id="films">
+                {films.map((film, index) => <div key={index}>{film.title}</div>)}
+            </section>
+        </>
+
     );
 }
 

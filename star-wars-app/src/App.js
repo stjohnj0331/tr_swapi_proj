@@ -11,8 +11,8 @@ function App() {
       <Routes>
           {/* <Route index element={<Home />} /> */}
           <Route path="films" element={<Films />} />
-          <Route path="planets" element={<Planets />} />
-          <Route path="people" element={<People />} />
+{/*           <Route path="planets" element={<Planets />} />
+          <Route path="people" element={<People />} /> */}
       </Routes>
     </BrowserRouter>
   );
