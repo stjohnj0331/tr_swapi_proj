@@ -3,21 +3,20 @@ import {getUrl} from './getUrl'
 import '../site.css';
 
 export const Planets = () => {
-    const [films, setFilms] = useState([])
+    const [planets, setPlanets] = useState([])
     let url = 'https://swapi.dev/api/planets';
-  
- 
+
     useEffect(() => {
         getUrl(url)
-        .then(listOfFilms => setFilms(listOfFilms))
+        .then(listOfPlanets => setPlanets(listOfPlanets))
     
     }, [url]); 
-    console.log(films);
+    console.log(planets);
     return(
         <>
-            <h2>Films</h2>
+            <h2>Planets</h2>
             <section id="films">
-                {films.map((film, index) => <div key={index}><button>{film.name}</button></div>)}
+                {planets.map((planet, index) => <div key={index}><button>{planet.name}</button></div>)}
             </section>
         </>
 

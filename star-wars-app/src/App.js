@@ -4,6 +4,9 @@ import {Films} from "./components/films"
 import {Planets} from "./components/planets"
 import {People} from "./components/people"
 import {Home} from "./components/home"
+import background from "./images/background.png"
+import {Button, Row} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 function App() {
@@ -30,4 +33,13 @@ function App() {
   );
 }
 
+const styles = {
+  container:{
+      backgroundImage: `url(${background})`, 
+      flex: 1
+  },
+  h2:{
+      color: '#FFC933'
+  }
+}
 export default App;

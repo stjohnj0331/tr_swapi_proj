@@ -1,6 +1,9 @@
-import React, { useEffect, useState } from "react"; 
+import React, { useEffect, useState} from "react"; 
 import {getUrl} from './getUrl'
-import '../site.css';
+//import '../site.css';
+import background from "../images/background.png"
+import {Button, Row} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const People = () => {
     const [people, setPeople] = useState([])
@@ -17,13 +20,22 @@ export const People = () => {
     console.log(people);
     return(
         <>
-            <h2>People</h2>
-            <section id="People">
-                {people.map((person, index) => <div key={index}><button>{person.name}</button></div>)}
-            </section>
+            <Row style={styles.container}>
+                <h2 style={styles.h2}>People</h2>
+                <Row id="People">
+                    {people.map((person, index) => <div key={index}><Button variant="outline-warning">{person.name}</Button></div>)}
+                </Row>
+            </Row>
         </>
-
     );
 }
 
-
+const styles = {
+    container:{
+        backgroundImage: `url(${background})`, 
+        flex: 1
+    },
+    h2:{
+        color: '#FFC933'
+    }
+}
