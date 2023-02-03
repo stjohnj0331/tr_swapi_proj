@@ -1,35 +1,34 @@
 import React, { useEffect, useState } from "react"; 
+import {getUrl} from './getUrl'
 
 export const Films = () => {
     const [films, setFilms] = useState([])
     let url = 'https://swapi.dev/api/films';
   
-/* 
+ 
     useEffect(() => {
-        fetch(`https://swapi.dev/api/films/1`)
-            .then(res = res.json())
-            .then((res) => {
-                setFilm(res);
-            })
-    }, []); */
-    async function getFilms(){
-        const tempFilms = [];
-        while(url){
-            try{
-                const fetchedFilms = await fetch(url)
-                    .then(res => res.json())
-                    .then(res => { url = res.next; return res })
-                    .then(res => res.results)
-                    tempFilms.push(...fetchedFilms)
-            }
-            catch (err){
-                console.error("error reading films" + err.message);
-            }
-        }
-        setFilms(tempFilms);
-    }
+        getUrl(url)
+        .then(listOfFilms => setFilms(listOfFilms))
+    
+    }, [url]); 
+    // async function getFilms(){
+    //     const tempFilms = [];
+    //     while(url){
+    //         try{
+    //             const fetchedFilms = await fetch(url)
+    //                 .then(res => res.json())
+    //                 .then(res => { url = res.next; return res })
+    //                 .then(res => res.results)
+    //                 tempFilms.push(...fetchedFilms)
+    //         }
+    //         catch (err){
+    //             console.error("error reading films" + err.message);
+    //         }
+    //     }
+    //     setFilms(tempFilms);
+    // }
 
-    getFilms();
+    // getFilms();
     console.log(films);
     return(
         <>
