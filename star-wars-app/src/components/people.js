@@ -16,7 +16,7 @@ export const People = () => {
         <>
             <h2>People</h2>
             <section id="People">
-                {people.map((person, index) => <div key={index}>{person.name}</div>)}
+                {people.map((person, index) => <div key={index}><button>{person.name}</button></div>)}
             </section>
         </>
 
