@@ -1,44 +1,26 @@
 import React, { useEffect, useState } from "react"; 
+import {getUrl} from './getUrl'
 
 export const People = () => {
     const [people, setPeople] = useState([])
     let url = 'https://swapi.dev/api/people';
-  
-/* 
+ 
     useEffect(() => {
-        fetch(`https://swapi.dev/api/films/1`)
-            .then(res = res.json())
-            .then((res) => {
-                setFilm(res);
-            })
-    }, []); */
-    async function getPeople(){
-        const tempPeople = [];
-        while(url){
-            try{
-                const fetchedPeople = await fetch(url)
-                    .then(res => res.json())
-                    .then(res => { url = res.next; return res })
-                    .then(res => res.results)
-                    tempPeople.push(...fetchedPeople)
-            }
-            catch (err){
-                console.error("error reading people" + err.message);
-            }
-        }
-        setPeople(tempPeople);
-    }
+        getUrl(url)
+        .then(listOfPeople => setPeople(listOfPeople))
+    
+    }, [url]); 
 
-    getPeople();
     console.log(people);
     return(
         <>
             <h2>People</h2>
-            <section id="people">
-                {people.map((person, index) => <div key={index}>{person.name}</div>)}
+            <section id="People">
+                {people.map((person, index) => <div key={index}><button>{person.name}</button></div>)}
             </section>
         </>
 
     );
 }
+
 

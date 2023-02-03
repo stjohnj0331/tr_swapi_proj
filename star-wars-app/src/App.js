@@ -5,6 +5,7 @@ import {Planets} from "./components/planets"
 import {People} from "./components/people"
 import {Home} from "./components/home"
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -17,10 +18,10 @@ function App() {
       </section>
     </header>
       <Routes>
-        <Route index element={<Home />} />
-        <Route path="films" element={<Films />} />
-        <Route path="planets" element={<Planets />} />
-        <Route path="people" element={<People />} />
+          <Route index element={<Home />} />
+          <Route path="films" element={<Films />} />
+          <Route path="planets" element={<Planets />} />
+          <Route path="people" element={<People />} />
       </Routes>
       <footer>
         blah blah blah footer notes here
