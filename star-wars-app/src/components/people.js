@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react"; 
 import {getUrl} from './getUrl'
+import '../site.css';
 
 export const People = () => {
     const [people, setPeople] = useState([])
