@@ -5,7 +5,7 @@ import {Planets} from "./components/planets"
 import {People} from "./components/people"
 import {Home} from "./components/home"
 import background from "./images/background.png"
-import {Button, Row} from 'react-bootstrap'
+import {Button, Row, Col} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -13,12 +13,12 @@ function App() {
   return (
     <BrowserRouter>
     <header className='nav'>
-      <section>
-        <Link to="/">Home</Link>
-        <Link to ='/films'>Films</Link>
-        <Link to ='/planets'>Planets</Link>
-        <Link to ='/people'>People</Link>
-      </section>
+      <Row>
+        <Col><Button variant="outline-warning"><Link to="/">Home</Link></Button></Col>
+        <Col><Button variant="outline-warning"><Link to ='/films'>Films</Link></Button></Col>
+        <Col><Button variant="outline-warning"><Link to ='/planets'>Planets</Link></Button></Col>
+        <Col><Button variant="outline-warning"><Link to ='/people'>People</Link></Button></Col>
+      </Row>
     </header>
       <Routes>
           <Route index element={<Home />} />
@@ -40,6 +40,9 @@ const styles = {
   },
   h2:{
       color: '#FFC933'
+  },
+  nav:{
+    color: '#FFC933'
   }
 }
 export default App;

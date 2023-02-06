@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react"; 
 import {getUrl} from './getUrl'
 import '../site.css';
+import background from "../images/background.png"
+import {Button, Row} from 'react-bootstrap'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Planets = () => {
     const [planets, setPlanets] = useState([])
@@ -14,11 +17,23 @@ export const Planets = () => {
     console.log(planets);
     return(
         <>
-            <h2>Planets</h2>
-            <section id="films">
-                {planets.map((planet, index) => <div key={index}><button>{planet.name}</button></div>)}
-            </section>
+            <Row style={styles.container}>
+                <h2 style={styles.h2}>Planets</h2>
+                <Row id="films">
+                    {planets.map((planet, index) => <div key={index}><Button variant="outline-warning">{planet.name}</Button></div>)}
+                </Row>
+            </Row>
         </>
 
     );
+}
+
+const styles = {
+    container:{
+        backgroundImage: `url(${background})`, 
+        flex: 1
+    },
+    h2:{
+        color: '#FFC933'
+    }
 }
