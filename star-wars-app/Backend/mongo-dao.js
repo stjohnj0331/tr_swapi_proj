@@ -4,7 +4,7 @@ let dbPool; //database connection
 
 mongodb.MongoClient.connect(url, function(err, db){
     if(!err){
-        dbPool = db;
+        dbPool = db.db('swapi');
     } else {
         console.log("DB CONNECTION FAILED. Is database running?");
     }
@@ -14,7 +14,7 @@ mongodb.MongoClient.connect(url, function(err, db){
 module.exports.findAllPeople = function(callback) {
     var col = dbPool.collection("people");
     col.find()
-        .toArray((err, data) => {
+        .toArray((err, people) => {
             if(!err){
                 callback(null, people);
             } else {
