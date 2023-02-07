@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import {getUrl} from './getUrl'
 import {Button, Row} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { getPlanets } from '../rest/index.js';
 
 export const Planets = () => {
     const [planets, setPlanets] = useState([])
