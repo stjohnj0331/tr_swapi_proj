@@ -22,7 +22,7 @@ export const Films = () => {
             <Row style={styles.body}>
                 <h2 style={styles.h2}>Films</h2>
                 <Row id="films">
-                    {films.map((film, index) => <div key={index}><Button variant="outline-warning">{film.title}</Button></div>)}
+                    {films.map((film, index) => <div key={index}><Button variant="outline-warning">{film.fields.title}</Button></div>)}
                 </Row>
             </Row>
         </>

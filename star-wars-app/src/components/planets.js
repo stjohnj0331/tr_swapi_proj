@@ -29,7 +29,7 @@ export const Planets = () => {
             <Row>
                 <h2 style={styles.h2}>Planets</h2>
                 <Row id="films">
-                    {planets.map((planet, index) => <div key={index}><Button variant="outline-warning">{planet.name}</Button></div>)}
+                    {planets.map((planet, index) => <div key={index}><Button variant="outline-warning">{planet.fields.name}</Button></div>)}
                 </Row>
             </Row>
         </>

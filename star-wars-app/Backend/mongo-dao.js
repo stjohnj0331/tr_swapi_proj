@@ -11,9 +11,10 @@ mongodb.MongoClient.connect(url, function(err, db){
 });
 
 // retrieve all people
-module.exports.findAllPeople = function(callback) {
+// using the skip and limit i need to tie in pagination by passing in the value
+module.exports.findAllPeople = function(callback, value) {
     var col = dbPool.collection("people");
-    col.find()
+    col.find()//.skip(0).limit(20)
         .toArray((err, people) => {
             if(!err){
                 callback(null, people);

@@ -7,6 +7,7 @@ export const People = () => {
     const [people, setPeople] = useState([]);
     useEffect(() => {
 
+        //in mongo 
         let promise = getData("http://localhost:4000/people");
         promise.then(
             (text) => {

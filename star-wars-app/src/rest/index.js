@@ -8,7 +8,6 @@ export function getPeople(){
     });
 }
 
-
 export function getFilms(){
     let myHeaders = new Headers({ "Content-Type": "application/json" });
     var myInit = { method: 'GET', headers: myHeaders, mode: 'cors' };
