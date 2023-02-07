@@ -5,14 +5,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Films = () => {
     const [films, setFilms] = useState([])
-    let url = 'https://swapi.dev/api/films';
-
     useEffect(() => {
-        getUrl(url)
-        .then(listOfFilms => setFilms(listOfFilms))
-    
-    }, [url]); 
-    console.log(films);
+
+        let promise = getFilms();
+        promise.then(
+            (text) => {
+                let filmsArray = text;
+                console.log(filmsArray);
+                setFilms(filmsArray);
+            }
+        )
+    }, []);
     return(
         <>
             <Row>

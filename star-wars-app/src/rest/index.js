@@ -7,3 +7,25 @@ export function getPeople(){
         return response.json();
     });
 }
+
+
+export function getFilms(){
+    let myHeaders = new Headers({ "Content-Type": "application/json" });
+    var myInit = { method: 'GET', headers: myHeaders, mode: 'cors' };
+    let promise = fetch("http://localhost:4000/films", myInit);
+    return promise.then((response) => {
+        console.log(response);
+        return response.json();
+    });
+}
+
+export function getPlanets(){
+    let myHeaders = new Headers({ "Content-Type": "application/json" });
+    var myInit = { method: 'GET', headers: myHeaders, mode: 'cors' };
+    let promise = fetch("http://localhost:4000/planets", myInit);
+    return promise.then((response) => {
+        console.log(response);
+        return response.json();
+    });
+}
+

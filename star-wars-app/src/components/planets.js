@@ -5,14 +5,25 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 export const Planets = () => {
     const [planets, setPlanets] = useState([])
-    let url = 'https://swapi.dev/api/planets';
-
     useEffect(() => {
-        getUrl(url)
-        .then(listOfPlanets => setPlanets(listOfPlanets))
+
+        let promise = getPlanets();
+        promise.then(
+            (text) => {
+                let planetsArray = text;
+                console.log(planetsArray);
+                setPlanets(planetsArray);
+            }
+        )
+    }, []);
+    // let url = 'https://swapi.dev/api/planets';
+
+    // useEffect(() => {
+    //     getUrl(url)
+    //     .then(listOfPlanets => setPlanets(listOfPlanets))
     
-    }, [url]); 
-    console.log(planets);
+    // }, [url]); 
+    // console.log(planets);
     return(
         <>
             <Row>
