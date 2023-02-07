@@ -35,7 +35,7 @@ export const People = () => {
                 <Row id="People">
                     {people.map( 
                         (person, index) => {
-                            return <li style={styles.h2} key={index}>{person.fields.name}</li>
+                            return <div style={styles.h2} key={index}><Button variant="outline-warning">{person.fields.name}</Button></div>
                         }
                     )}
                 </Row>

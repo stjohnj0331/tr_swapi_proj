@@ -45,6 +45,8 @@ const styles = {
   container:{
     backgroundImage: `url(${background})`,
     backgroundPosition: "center",
+    backgroundRepeat: "repeat",
+    overflowX: "scroll",
     height: "100vh"
   },
   h2:{
