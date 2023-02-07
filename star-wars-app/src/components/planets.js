@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"; 
-import {getUrl} from './getUrl'
+import {getData} from '../rest/index.js'
 import {Button, Row} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -7,7 +7,7 @@ export const Planets = () => {
     const [planets, setPlanets] = useState([])
     useEffect(() => {
 
-        let promise = getPlanets();
+        let promise = getData("http://localhost:4000/planets");
         promise.then(
             (text) => {
                 let planetsArray = text;

@@ -29,6 +29,7 @@ export function getPlanets(){
     });
 }
 
+//refactored the above into a generic function
 export function getData(url){
     let myHeaders = new Headers({ "Content-Type": "application/json" });
     var myInit = { method: 'GET', headers: myHeaders, mode: 'cors' };

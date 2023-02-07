@@ -1,14 +1,13 @@
 import React, { useEffect, useState} from "react"; 
-import {getUrl} from './getUrl'
+import {getData} from '../rest/index.js'
 import {Button, Row} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { getPeople } from '../rest/index.js';
 
 export const People = () => {
     const [people, setPeople] = useState([]);
     useEffect(() => {
 
-        let promise = getPeople();
+        let promise = getData("http://localhost:4000/people");
         promise.then(
             (text) => {
                 let peopleArray = text;
@@ -35,7 +34,7 @@ export const People = () => {
                 <Row id="People">
                     {people.map( 
                         (person, index) => {
-                            return <li key={index}>{person.name}</li>
+                            return <li style={styles.h2} key={index}>{person.fields.name}</li>
                         }
                     )}
                 </Row>

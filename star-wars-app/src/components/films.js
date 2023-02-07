@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react"; 
-import {getUrl} from './getUrl'
+import {getData} from '../rest/index.js'
 import {Button, Row} from 'react-bootstrap'
 import background from "../images/background2.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,7 +8,7 @@ export const Films = () => {
     const [films, setFilms] = useState([])
     useEffect(() => {
 
-        let promise = getFilms();
+        let promise = getData("http://localhost:4000/films");
         promise.then(
             (text) => {
                 let filmsArray = text;
