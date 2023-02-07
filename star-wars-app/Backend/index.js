@@ -10,7 +10,7 @@ app.listen(port);
 
 app.get('/people', (req, res) => {
     // check if id is correct in req.params.id
-    dao.findAllPeople(req.params.id, (err, boopeopleks) => {
+    dao.findAllPeople((err, people) => {
         if(people !== undefined){
             console.log("index.js all people: " + people)
             res.send(people);
