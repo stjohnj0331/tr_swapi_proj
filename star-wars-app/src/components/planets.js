@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react"; 
 import {getUrl} from './getUrl'
-import '../site.css';
-import background from "../images/background.png"
 import {Button, Row} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -17,7 +15,7 @@ export const Planets = () => {
     console.log(planets);
     return(
         <>
-            <Row style={styles.container}>
+            <Row>
                 <h2 style={styles.h2}>Planets</h2>
                 <Row id="films">
                     {planets.map((planet, index) => <div key={index}><Button variant="outline-warning">{planet.name}</Button></div>)}
@@ -29,10 +27,6 @@ export const Planets = () => {
 }
 
 const styles = {
-    container:{
-        backgroundImage: `url(${background})`, 
-        flex: 1
-    },
     h2:{
         color: '#FFC933'
     }
