@@ -4,7 +4,7 @@ import {Films} from "./components/films"
 import {Planets} from "./components/planets"
 import {People} from "./components/people"
 import {Home} from "./components/home"
-import background from "./images/background.png"
+import background from "./images/stars.png"
 import {Button, Row, Col, ButtonGroup} from 'react-bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css';
 
