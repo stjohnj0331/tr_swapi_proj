@@ -22,3 +22,27 @@ module.exports.findAllPeople = function(callback) {
             }
         });
 };
+
+module.exports.findAllFilms = function(callback) {
+    var col = dbPool.collection("films");
+    col.find()
+        .toArray((err, films) => {
+            if(!err){
+                callback(null, films);
+            } else {
+                callback("failed to find films", undefined);
+            }
+        });
+};
+
+module.exports.findAllPlanets = function(callback) {
+    var col = dbPool.collection("planets");
+    col.find()
+        .toArray((err, planets) => {
+            if(!err){
+                callback(null, planets);
+            } else {
+                callback("failed to find planets", undefined);
+            }
+        });
+};

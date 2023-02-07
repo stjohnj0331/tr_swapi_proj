@@ -22,3 +22,29 @@ app.get('/people', (req, res) => {
         }
     });
 });
+
+app.get('/films', (req, res) => {
+    // check if id is correct in req.params.id
+    dao.findAllFilms((err, films) => {
+        if(films !== undefined){
+            console.log("index.js all films: " + films)
+            res.send(films);
+        } else {
+            res.statusCode = 500;
+            res.end;
+        }
+    });
+});
+
+app.get('/planets', (req, res) => {
+    // check if id is correct in req.params.id
+    dao.findAllPlanets((err, planets) => {
+        if(people !== undefined){
+            console.log("index.js all planets: " + planets)
+            res.send(planets);
+        } else {
+            res.statusCode = 500;
+            res.end;
+        }
+    });
+});
