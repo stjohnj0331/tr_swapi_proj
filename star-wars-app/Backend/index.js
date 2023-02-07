@@ -38,8 +38,9 @@ app.get('/films', (req, res) => {
 
 app.get('/planets', (req, res) => {
     // check if id is correct in req.params.id
+    console.log("test")
     dao.findAllPlanets((err, planets) => {
-        if(people !== undefined){
+        if(planets !== undefined){
             console.log("index.js all planets: " + planets)
             res.send(planets);
         } else {
