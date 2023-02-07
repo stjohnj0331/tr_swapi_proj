@@ -3,6 +3,7 @@ import {getData} from '../rest/index.js'
 import {Button, Row} from 'react-bootstrap'
 import background from "../images/background2.png"
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { getFilms } from '../rest/index.js';
 
 export const Films = () => {
     const [films, setFilms] = useState([])
