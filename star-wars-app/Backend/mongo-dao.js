@@ -1,5 +1,5 @@
 const mongodb = require("mongodb"); //mongo client library
-const url = "monogb://localhost:27017/swapi_api";
+const url = "mongodb://localhost:27017/swapi";
 let dbPool; //database connection
 
 mongodb.MongoClient.connect(url, function(err, db){
